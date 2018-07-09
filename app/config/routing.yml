@@ -1,0 +1,13 @@
+_home:
+    path:     /
+    defaults: { _controller: ERBundle:Membre:ajouter }
+
+er:
+    resource: "@ERBundle/Resources/config/routing.yml"
+    prefix:   /ekipar
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

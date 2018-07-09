@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membre</title>
+	<link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('vendor/animate/animate.css') }}" rel="stylesheet" />
+	<link href="{{ asset('vendor/animsition/css/animsition.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('vendor/select2/select2.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('vendor/daterangepicker/daterangepicker.css') }}" rel="stylesheet" />
+	<link href="{{ asset('css/util.css') }}" rel="stylesheet" />
+	<link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+</head>
+<body style="background: #ebebeb;">
+
+<div class="container-fluid">
+	{% block bienvenu %}
+		<div 
+			class="row" 
+			style="border: 1px solid black; margin-top: 10px; color: white; background: #757272; text-align: left;"
+		>
+			<div class="col-md-12" style="padding-right: 0px;">
+				Bonjour {{ app.user.username }}, bienvenu à la gestion des membres.
+				<a 
+					href="{{ path('fos_user_security_logout') }}"
+					style="float: right;font-size: 18px;"
+					class="btn btn-danger" 
+				>
+					Déconnexion
+				</a>
+			</div>
+		</div>
+	{% endblock%}
+
+	{% block menu %}
+		<br>
+		<div class="row">
+			<div class="col-md-3" style="padding-left: 0px;">
+				<p>
+					<a href="{{ path('er_ajout') }}" class="btn btn-success" style="width: 100%">
+						<img 
+							src="{{ asset('images/icons/Actions-list-add-user-icon.png') }}"
+							style="vertical-align: text-top !important;" 
+						>
+						Ajouter
+					</a>
+				</p>
+			</div>
+			<div class="col-md-3">
+				<p>
+					<a href="{{ path('er_cherche') }}" class="btn btn-primary" style="width: 100%">
+						<img 
+							src="{{ asset('images/icons/Loupe-icon.png') }}"
+							style="vertical-align: text-top !important;" 
+						>						
+						Chercher
+					</a>
+				<p>
+			</div>
+			<div class="col-md-3">
+				<p>
+					<a href="{{ path('er_admin') }}" class="btn btn-primary" style="width: 100%">
+						<img 
+							src="{{ asset('images/icons/User-Administrator-Red-icon.png') }}"
+							style="vertical-align: text-top !important;" 
+						>						
+						Admin
+					</a>
+				<p>
+			</div>
+			<div class="col-md-3" style="padding-right: 0px;">
+				<p>
+					<a href="" class="btn btn-primary" style="width: 100%">
+						<img 
+							src="{{ asset('images/icons/Help-icon.png') }}"
+							style="vertical-align: text-top !important;" 
+						>						
+						Aide
+					</a>
+				<p>
+			</div>
+		</div>
+	{% endblock %}
+
+	{% block content %}
+		<div class="row">
+			<div class="col-md-12">
+				Content
+			</div>
+		</div>
+	{% endblock %}
+
+	{% block footer %}
+		<div 
+			class="row" 
+			style="border: 1px solid black; margin-top: 10px; color: white; background: #757272; text-align: center;"
+		>
+			<div class="col-md-12">
+				Contact
+			</div>
+		</div>
+	{% endblock %}	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% extends '::base.html.twig' %}
+{% block title %}Admin compte!{% endblock %}
+{% block body %}
+	{% if app.user %}
+	Bonjour {{ app.user.username }}, vous etes un admin, super!!
+	{% endif %}
+{% endblock %}

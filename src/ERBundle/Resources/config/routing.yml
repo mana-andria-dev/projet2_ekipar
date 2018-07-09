@@ -1,0 +1,12 @@
+er_homepage:
+    path:     /
+    defaults: { _controller: ERBundle:Membre:ajouter }
+er_ajout:
+    path:     /ajout
+    defaults: { _controller: ERBundle:Membre:ajouter }
+er_cherche:
+    path:     /cherche
+    defaults: { _controller: ERBundle:Membre:chercher }
+er_admin:
+    path:     /admin
+    defaults: { _controller: ERBundle:Membre:admin }

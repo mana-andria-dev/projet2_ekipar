@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "::base.html.twig" %}
+
+{% block fos_user_content %}
+	{% trans_default_domain 'FOSUserBundle' %}
+	<div class="login-container">
+		{{ form_start(form, {
+			'method': 'post',
+			'action': path('fos_user_registration_register')
+			}) 
+		}}
+		
+		    {{ form_widget(form) }}
+		    
+		        <input class="login login-submit" type="submit" value="{{ 'registration.submit'|trans }}" />
+		     <div class="login-help">
+              <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            </div>
+	{{ form_end(form) }}
+ 	</div>
+{% endblock fos_user_content %}
