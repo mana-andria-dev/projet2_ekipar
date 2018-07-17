@@ -1,81 +1,161 @@
-{% extends '::membre.html.twig' %}
+{% extends '::dream.html.twig' %}
 
-	{% block content %}
-		<style type="text/css">
-			td {
-				border: none !important;
-				color: white !important;
-			}
-		</style>	
-		<div 
-			class="row" 
-			style="border: 1px solid black; margin-top: 10px; background: #757272; margin-top: 10px;"
-		>
+                {% block content %}             
+                    <div id="page-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> 
+                                <h3>Liste de toutes les membres</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_ajout') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                            style="font-size: 15px;" 
+                                        >
+                                        <i class="glyphicon glyphicon-plus"></i>
+                                        	Ajouter
+                                        </a>
+                                    </li>
+                                    <li class="active" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_cherche', {'page': 1}) }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                            style="font-size: 15px;" 
+                                        >
+                                        <i class="glyphicon glyphicon-th-list"></i>
+                                        	Listes
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_admin') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                            style="font-size: 15px;" 
+                                        >                                        
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                        	Admin
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                            href="#tabaides" 
+                                            data-toggle="tab"
+                                            onclick="return false;"
+                                            style="font-size: 15px;" 
+                                        >
+                                            <i class="glyphicon glyphicon-question-sign"></i>
+                                            Aides
+                                        </a>
+                                    </li>
+                                </ul>
 
-			<div 
-				class="col-md-12" style="padding-right: 0px;" 
-			>
-				<div style="margin-bottom: 5px; width: 300px; border: 1px solid white; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #151105c9;">
-					{{ TotalMembres }} Enregistrements
-				</div>
-			</div>
-
-			<div class="col-md-12" style="margin-bottom: 5px;">
-				<form method="post" action="">
-					<div class="row">
-						<div class="col-md-3">
-							<img 
-								src="{{ asset('images/icons/Loupe-icon.png') }}"
-								style="vertical-align: text-top !important; float: right; width: 13%;" 
-							>							
-						</div>
-						<div class="col-md-5" style="padding-left: 0px;">						
-							<input 
-								type="text" 
-								name="rechercher"
-								placeholder="Rechercher une donnée (nom, prénom, fonction, région, ...)"
-								class="form-control" 
-							>
-						</div>
-						<div class="col-md-1" style="padding-left: 0px;">
-							<input 
-								type="submit" 
-								class="btn btn-success"  
-								value="Rechercher"
-							>						
-						</div>
-						<div class="col-md-3">
-						</div>
-					</div>
-				</form>
-			</div>
-
-			<div class="col-md-12">
-				<table class="table table-striped">
-				<tr class="row">
-					<td class="col-md-3"><span style="color: black;"><b>Nom</b></span></td>
-					<td class="col-md-3"><span style="color: black;"><b>Prenom</b></span></td>
-					<td class="col-md-3"><span style="color: black;"><b>Fonction</b></span></td>
-					<td class="col-md-3"><span style="color: black;"><b>Action</b></span></td>
-				</tr>
-				{% for Membre in Membres %}
-					<tr class="row">
-						<td class="col-md-3">{{ Membre.nom }}</td>
-						<td class="col-md-3">{{ Membre.prenom }}</td>
-						<td class="col-md-3">{{ Membre.fonction }}</td>
-						<td class="col-md-3">
-							<div class="row">
-								<div class="col-md-6">
-									<a href="" class="btn btn-warning">Modifier</a>
-								</div>
-								<div class="col-md-6">
-									<a href="" class="btn btn-danger">Supprimer</a>
-								</div>
-							</div>
-						</td>
-					</tr>
-				{% endfor %}
-				</table>
-			</div>
-		</div>	
-	{% endblock %}
+                                <div class="tab-content">
+                                    {% block tab %}                                   
+                                        <div 
+                                            class="table-responsive" 
+                                        >
+                                            <div style="margin-bottom: 5px; width: 300px; border: 1px solid #24691c; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #318407c9;">
+                                                <i class="fa fa-users"></i>
+                                                {{ TotalMembres }} Enregistrements
+                                            </div>                                        
+                                            <table 
+                                                class="table table-striped"
+                                                style="border-right: 1px solid #dddddd; border-left: 1px solid #dddddd; border-bottom: 1px solid #dddddd;"    
+                                            >
+                                            <tr class="row">
+                                                <td class="col-md-3"><span style="color: black;"><b>Nom</b></span></td>
+                                                <td class="col-md-3"><span style="color: black;"><b>Prenom</b></span></td>
+                                                <td class="col-md-3"><span style="color: black;"><b>Fonction</b></span></td>
+                                                <td class="col-md-3"><span style="color: black;"><b>Action</b></span></td>
+                                            </tr>
+                                            {% for Membre in Membres %}
+                                                <tr class="row">
+                                                    <td class="col-md-3">{{ Membre.nom }}</td>
+                                                    <td class="col-md-3">{{ Membre.prenom }}</td>
+                                                    <td class="col-md-3">{{ Membre.fonction }}</td>
+                                                    <td class="col-md-3">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <button class="btn btn-sm btn-primary"><i class="fa fa-edit "></i> Modifier</button>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <button 
+                                                                    class="btn btn-sm btn-danger"
+                                                                    data-toggle="modal" data-target="#modalSuppression{{Membre.id}}"
+                                                                >
+                                                                  Supprimer
+                                                                </button>
+                                                                <!-- <a 
+                                                                    href="
+                                                                    {{ 
+                                                                        path(
+                                                                            'er_supprimer',
+                                                                            { 'id': Membre.id }
+                                                                        ) 
+                                                                    }}" 
+                                                                    class="btn btn-sm btn-danger">
+                                                                    <i class="fa fa-pencil"></i> 
+                                                                    Supprimer
+                                                                </a> -->
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <div 
+                                                    class="modal fade in" 
+                                                    id="modalSuppression{{Membre.id}}" 
+                                                    tabindex="-1" 
+                                                    role="dialog" 
+                                                    aria-labelledby="modalSuppression{{Membre.id}}" 
+                                                    aria-hidden="false"
+                                                >
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header" style="background: #ef150a;">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                <h2 
+                                                                    class="modal-title" 
+                                                                    id="myModalLabel"
+                                                                    style="color: #fff;"
+                                                                >
+                                                                    Attention!
+                                                                </h2>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h4>Voulez vous vraiment supprimer le membre <b>{{Membre.nom}} {{Membre.prenom}}</b> ?</h3>
+                                                            </div>
+                                                            <div class="modal-footer" style="background: #ef150a;">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                                                                <a 
+                                                                    href="
+                                                                    {{ 
+                                                                        path(
+                                                                            'er_supprimer',
+                                                                            { 'id': Membre.id }
+                                                                        ) 
+                                                                    }}"
+                                                                    class="btn btn-danger"
+                                                                >
+                                                                    Supprimer
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                
+                                            {% endfor %}
+                                            </table>
+                                            <div class="text-center">
+                                                {{ knp_pagination_render(Membres) }}
+                                            </div>
+                                        </div>
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                {% endblock %}

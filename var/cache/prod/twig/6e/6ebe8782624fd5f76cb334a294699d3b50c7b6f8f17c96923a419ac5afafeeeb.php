@@ -28,85 +28,93 @@ class __TwigTemplate_0acca57c56c79d01fd113cf3f89dfb51dbfdd9aeebbfb8f9b0bdf94afe6
         }
         // line 6
         echo "
-
-
-<div class=\"container\">
-    <div class=\"row vertical-offset-100\">
-        <div class=\"col-md-4 col-md-offset-4\">
-            <div class=\"panel panel-default\">
-                <div class=\"panel-heading\">
-                    <h3 class=\"panel-title\">Please sign in</h3>
-                </div>
-                <div class=\"panel-body\">
-                    <form action=\"";
-        // line 17
+    <div class=\"limiter\">
+        <div class=\"container-login100\">
+            <div class=\"wrap-login100\">
+                <form 
+                    action=\"";
+        // line 11
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_check");
-        echo "\" method=\"post\">
-                    <fieldset>
-                        <div class=\"form-group\">
+        echo "\" 
+                    method=\"post\"
+                    class=\"login100-form validate-form p-l-55 p-r-55 p-t-178\"
+                >
+                <form >
+                    <span class=\"login100-form-title\">
+                        Authentification
+                    </span>
+
+                    <div class=\"wrap-input100 validate-input m-b-16\" data-validate=\"Entrer votre login\">
                             ";
-        // line 20
+        // line 21
         if (($context["csrf_token"] ?? null)) {
-            // line 21
+            // line 22
             echo "                                <input type=\"hidden\" name=\"_csrf_token\" value=\"";
             echo twig_escape_filter($this->env, ($context["csrf_token"] ?? null), "html", null, true);
             echo "\" />
                             ";
         }
-        // line 23
+        // line 24
         echo "
                             <input 
                                 type=\"text\" 
                                 id=\"username\" 
                                 name=\"_username\" 
                                 value=\"";
-        // line 28
+        // line 29
         echo twig_escape_filter($this->env, ($context["last_username"] ?? null), "html", null, true);
         echo "\" 
                                 required=\"required\" 
                                 autocomplete=\"username\" 
-                                class=\"form-control\"
-                                placeholder=\"Pseudo\"
-                            />
-                        </div>
-                        <div class=\"form-group\">
+                                class=\"input100\"
+                                placeholder=\"Identifiant\"
+                            />                        
+                        <span class=\"focus-input100\"></span>
+                    </div>
+
+                    <div class=\"wrap-input100 validate-input\" data-validate = \"Votre mot de passe\">
                             <input 
                                 type=\"password\" 
                                 id=\"password\" 
                                 name=\"_password\" 
                                 required=\"required\" 
                                 autocomplete=\"current-password\"
-                                class=\"form-control\"
-                                placeholder=\"Password\" 
-                            />
-                        </div>
-                        <div class=\"checkbox\">
-                            <label>
-                                Rester connecter
-                                <input 
-                                    type=\"checkbox\" 
-                                    id=\"remember_me\" 
-                                    name=\"_remember_me\" 
-                                    value=\"on\" 
-                                />
-                            </label>
-                        </div>
-                        <input 
-                            type=\"submit\" 
-                            id=\"_submit\" 
-                            name=\"_submit\" 
-                            value=\"Connecter\"
-                            class=\"btn btn-lg btn-success btn-block\"
-                        />
-                    </fieldset>
-                    </form>
+                                class=\"input100\"
+                                placeholder=\"Mot de passe\" 
+                            />                        
+                        <span class=\"focus-input100\"></span>
+                    </div>
 
-                </div>
+                    <!-- <div class=\"text-right p-t-13 p-b-23\">
+                        <span class=\"txt1\">
+                            Forgot
+                        </span>
+
+                        <a href=\"#\" class=\"txt2\">
+                            Username / Password?
+                        </a>
+                    </div> -->
+
+                    <br>
+                    <div class=\"container-login100-form-btn\">
+                        <button class=\"login100-form-btn\">
+                            Connexion
+                        </button>
+                    </div>
+
+                    <div class=\"flex-col-c p-t-170 p-b-40\">
+                        <!-- <span class=\"txt1 p-b-9\">
+                            Don’t have an account?
+                        </span> -->
+
+                        <a href=\"#\" class=\"txt3\">
+                            EkipaR ®
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-</div>
-";
+    </div>";
     }
 
     public function getTemplateName()
@@ -121,7 +129,7 @@ class __TwigTemplate_0acca57c56c79d01fd113cf3f89dfb51dbfdd9aeebbfb8f9b0bdf94afe6
 
     public function getDebugInfo()
     {
-        return array (  64 => 28,  57 => 23,  51 => 21,  49 => 20,  43 => 17,  30 => 6,  24 => 4,  22 => 3,  19 => 2,);
+        return array (  65 => 29,  58 => 24,  52 => 22,  50 => 21,  37 => 11,  30 => 6,  24 => 4,  22 => 3,  19 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
