@@ -1,0 +1,81 @@
+{% extends '::membre.html.twig' %}
+
+	{% block content %}
+		<style type="text/css">
+			td {
+				border: none !important;
+				color: white !important;
+			}
+		</style>	
+		<div 
+			class="row" 
+			style="border: 1px solid black; margin-top: 10px; background: #757272; margin-top: 10px;"
+		>
+
+			<div 
+				class="col-md-12" style="padding-right: 0px;" 
+			>
+				<div style="margin-bottom: 5px; width: 300px; border: 1px solid white; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #151105c9;">
+					{{ TotalMembres }} Enregistrements
+				</div>
+			</div>
+
+			<div class="col-md-12" style="margin-bottom: 5px;">
+				<form method="post" action="">
+					<div class="row">
+						<div class="col-md-3">
+							<img 
+								src="{{ asset('images/icons/Loupe-icon.png') }}"
+								style="vertical-align: text-top !important; float: right; width: 13%;" 
+							>							
+						</div>
+						<div class="col-md-5" style="padding-left: 0px;">						
+							<input 
+								type="text" 
+								name="rechercher"
+								placeholder="Rechercher une donnée (nom, prénom, fonction, région, ...)"
+								class="form-control" 
+							>
+						</div>
+						<div class="col-md-1" style="padding-left: 0px;">
+							<input 
+								type="submit" 
+								class="btn btn-success"  
+								value="Rechercher"
+							>						
+						</div>
+						<div class="col-md-3">
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="col-md-12">
+				<table class="table table-striped">
+				<tr class="row">
+					<td class="col-md-3"><span style="color: black;"><b>Nom</b></span></td>
+					<td class="col-md-3"><span style="color: black;"><b>Prenom</b></span></td>
+					<td class="col-md-3"><span style="color: black;"><b>Fonction</b></span></td>
+					<td class="col-md-3"><span style="color: black;"><b>Action</b></span></td>
+				</tr>
+				{% for Membre in Membres %}
+					<tr class="row">
+						<td class="col-md-3">{{ Membre.nom }}</td>
+						<td class="col-md-3">{{ Membre.prenom }}</td>
+						<td class="col-md-3">{{ Membre.fonction }}</td>
+						<td class="col-md-3">
+							<div class="row">
+								<div class="col-md-6">
+									<a href="" class="btn btn-warning">Modifier</a>
+								</div>
+								<div class="col-md-6">
+									<a href="" class="btn btn-danger">Supprimer</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+				{% endfor %}
+				</table>
+			</div>
+		</div>	
+	{% endblock %}

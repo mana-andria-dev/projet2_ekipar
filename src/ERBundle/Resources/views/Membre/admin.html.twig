@@ -1,20 +1,63 @@
-{% extends '::membre.html.twig' %}
+{% extends '::dream.html.twig' %}
 
-	{% block content %}
-	<style type="text/css">
-		td {
-			border: none !important;
-			color: white !important;
-		}
-	</style>
-		<div 
-			class="row" 
-			style="border: 1px solid black; margin-top: 10px; background: #d80c0c; color: white; text-align: center;"
-		>
-			<div class="col-md-12">
-				<div class="label label-info">
-					Cette page est reservée à l'administration
-				</div>
-			</div>
-		</div>
-	{% endblock %}
+                {% block content %}
+                    <div id="page-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3>Espace administration</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_ajout') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                        <i class="glyphicon glyphicon-plus"></i>
+                                        	Ajouter
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_cherche') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                        <i class="glyphicon glyphicon-th-list"></i>
+                                        	Listes
+                                    	</a>
+                                    </li>
+                                    <li class="active" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_admin') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                        	Admin
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                            href="#tabaides" 
+                                            data-toggle="tab"
+                                            onclick="return false;"
+                                        >
+                                            <i class="glyphicon glyphicon-question-sign"></i>
+                                            Aides
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <br>
+                                    <div class="alert alert-danger">
+                                        <strong>Attention !</strong> 
+                                        Cette page est reservée à l'administarteur
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                {% endblock %}

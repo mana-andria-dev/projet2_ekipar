@@ -1,58 +1,119 @@
-{% extends '::membre.html.twig' %}
+{% extends '::dream.html.twig' %}
 
-	{% block content %}
-	<style type="text/css">
-		td {
-			border: none !important;
-			color: white !important;
-		}
-	</style>
-		<div class="row" style="border: 1px solid black; margin-top: 10px; background: #757272;">
-			<div class="col-md-12">
-				{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
-				<table class="table">
-					<tr>
-						<td>Nom</td>
-						<td>:</td>
-						<td>
-							{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
-						</td>
-					</tr>
-					<tr>
-						<td>Prenom</td>
-						<td>:</td>
-						<td>
-							{{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prenom'}}) }}
-						</td>
-					</tr>
-					<tr>
-						<td>Fonction</td>
-						<td>:</td>
-						<td>
-							{{ form_widget(form.fonction, {'attr': {'class': 'form-control', 'placeholder': 'Fonction'}}) }}
-						</td>
-					</tr>
-				</table>
+                {% block content %}
+                    <div id="page-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3>Formulaire pour ajouter un membre</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="active" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_ajout') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                        	Ajouter
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_cherche') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                            <i class="glyphicon glyphicon-th-list"></i>
+                                        	Listes
+                                    	</a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_admin') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                            <i class="glyphicon glyphicon-lock"></i>
+                                        	Admin
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                            href="#tabaides" 
+                                            data-toggle="tab"
+                                            onclick="return false;"
+                                        >
+                                            <i class="glyphicon glyphicon-question-sign"></i>
+                                            Aides
+                                        </a>
+                                    </li>
+                                </ul>
 
-				<div class="row pull-right" style="margin-bottom: 10px;">
-					<a 
-						href="" 
-						class="btn btn-primary" 
-						style="width: 200px; margin-right: 5px;"
-					>
-						Nouveau
-					</a>
-					<input 
-						type="submit" 
-						name="Ajouter" 
-						class="btn btn-success"
-						style="width: 200px; margin-right: 28px;"
-					>
-				</div>
-				
-				{{ form_end(form) }}
+                                <div class="tab-content">
+                                    {% block tab %}
+                                    	<br>
 
+                                        {% if message.status == 'succes' %}
+                                        <div class="alert alert-success">
+                                            <strong>Succes!</strong> 
+                                            {{message.text}}
+                                        </div>
+                                        {% endif %} 
+                                        {% if message.status == 'erreur' %}
+                                        <div class="alert alert-danger">
+                                            <strong>Erreur!</strong> 
+                                            {{message.text}}
+                                        </div>
+                                        {% endif %}      
 
-			</div>
-		</div>
-	{% endblock %}
+										<div class="row">
+			                            {{ form_start(
+				                            	form, 
+				                            	{'attr': {'class': 'form-horizontal'}}
+			                            	) 
+			                            }}
+			                                <div class="col-lg-6" style="padding-left: 32px;padding-right: 32px;">
+			                                        <div class="form-group">
+			                                            <label>
+			                                            	Nom
+			                                            </label>
+			                                            {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+			                                        </div>
+			                                        <div class="form-group">
+			                                            <label>Prenom</label>
+			                                            {{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prenom'}}) }}
+			                                        </div>
+                                                    <div class="form-group">
+                                                        <label>Téléphone</label>
+                                                        {{ form_widget(form.telephone, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone'}}) }}
+                                                    </div>
+			                                        <div class="form-group">
+				                                        <button 
+				                                        	type="submit" 
+				                                        	class="btn btn-success"
+				                                        >
+				                                    		Enregister
+				                                    	</button>
+			                                        </div>
+			                                </div>
+			                                <!-- /.col-lg-6 (nested) -->
+			                                <div class="col-lg-6" style="padding-left: 32px;padding-right: 32px;">
+                                                <div class="form-group">
+                                                    <label>Fonction</label>
+                                                    {{ form_widget(form.fonction, {'attr': {'class': 'form-control', 'placeholder': 'Fonction'}}) }}
+                                                </div>
+		                                        <div class="form-group">
+		                                            <label>CIN</label>
+		                                            {{ form_widget(form.cin, {'attr': {'class': 'form-control', 'placeholder': 'CIN'}}) }}
+		                                        </div>
+			                                </div>
+			                                <!-- /.col-lg-6 (nested) -->
+	                                    {{ form_end(form) }}
+			                            </div>
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                {% endblock %}
