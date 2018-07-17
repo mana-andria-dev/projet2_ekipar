@@ -1,0 +1,56 @@
+	{% block content %}
+	<style type="text/css">
+		td {
+			border: none !important;
+			color: white !important;
+		}
+	</style>
+		<div class="row" style="border: 1px solid black; margin-top: 10px; background: #757272;">
+			<div class="col-md-12">
+				{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+				<table class="table">
+					<tr>
+						<td>Nom</td>
+						<td>:</td>
+						<td>
+							{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+						</td>
+					</tr>
+					<tr>
+						<td>Prenom</td>
+						<td>:</td>
+						<td>
+							{{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prenom'}}) }}
+						</td>
+					</tr>
+					<tr>
+						<td>Fonction</td>
+						<td>:</td>
+						<td>
+							{{ form_widget(form.fonction, {'attr': {'class': 'form-control', 'placeholder': 'Fonction'}}) }}
+						</td>
+					</tr>
+				</table>
+
+				<div class="row pull-right" style="margin-bottom: 10px;">
+					<a 
+						href="" 
+						class="btn btn-primary" 
+						style="width: 200px; margin-right: 5px;"
+					>
+						Nouveau
+					</a>
+					<input 
+						type="submit" 
+						name="Ajouter" 
+						class="btn btn-success"
+						style="width: 200px; margin-right: 28px;"
+					>
+				</div>
+				
+				{{ form_end(form) }}
+
+
+			</div>
+		</div>
+	{% endblock %}

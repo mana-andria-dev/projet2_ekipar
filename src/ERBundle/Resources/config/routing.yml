@@ -5,8 +5,11 @@ er_ajout:
     path:     /ajout
     defaults: { _controller: ERBundle:Membre:ajouter }
 er_cherche:
-    path:     /cherche
-    defaults: { _controller: ERBundle:Membre:chercher }
+    path:     /cherche/{page}
+    defaults: { _controller: ERBundle:Membre:chercher, page: 1 }
 er_admin:
     path:     /admin
     defaults: { _controller: ERBundle:Membre:admin }
+er_supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: ERBundle:Membre:supprimer }

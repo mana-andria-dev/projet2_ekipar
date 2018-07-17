@@ -27,6 +27,42 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
         $context = $this->context;
         $request = $this->request;
 
+        // _home
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', '_home');
+            }
+
+            return array (  '_controller' => 'ERBundle\\Controller\\MembreController::ajouterAction',  '_route' => '_home',);
+        }
+
+        if (0 === strpos($pathinfo, '/ekipar')) {
+            // er_homepage
+            if (rtrim($pathinfo, '/') === '/ekipar') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'er_homepage');
+                }
+
+                return array (  '_controller' => 'ERBundle\\Controller\\MembreController::ajouterAction',  '_route' => 'er_homepage',);
+            }
+
+            // er_ajout
+            if ($pathinfo === '/ekipar/ajout') {
+                return array (  '_controller' => 'ERBundle\\Controller\\MembreController::ajouterAction',  '_route' => 'er_ajout',);
+            }
+
+            // er_cherche
+            if ($pathinfo === '/ekipar/cherche') {
+                return array (  '_controller' => 'ERBundle\\Controller\\MembreController::chercherAction',  '_route' => 'er_cherche',);
+            }
+
+            // er_admin
+            if ($pathinfo === '/ekipar/admin') {
+                return array (  '_controller' => 'ERBundle\\Controller\\MembreController::adminAction',  '_route' => 'er_admin',);
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

@@ -42,6 +42,20 @@ class Membre
      */
     private $fonction;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cin", type="string", length=255)
+     */
+    private $cin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
+
 
     /**
      * Get id
@@ -124,5 +138,52 @@ class Membre
     {
         return $this->fonction;
     }
-}
 
+    /**
+     * Set cin
+     *
+     * @param string $cin
+     *
+     * @return Membre
+     */
+    public function setCin($cin)
+    {
+        $this->cin = $cin;
+
+        return $this;
+    }
+
+    /**
+     * Get cin
+     *
+     * @return string
+     */
+    public function getCin()
+    {
+        return $this->cin;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return Membre
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+}
