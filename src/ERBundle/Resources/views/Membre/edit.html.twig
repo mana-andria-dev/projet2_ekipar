@@ -1,0 +1,125 @@
+{% extends '::dream.html.twig' %}
+
+                {% block content %}
+                    <div id="page-wrapper">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3>Formulaire pour ajouter un membre</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="active" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_ajout') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                        	Ajouter
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_cherche') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                            <i class="glyphicon glyphicon-th-list"></i>
+                                        	Listes
+                                    	</a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                        	href="{{ path('er_admin') }}" 
+                                        	data-toggle="tab"
+                                        	onclick="return location.href=this.href"
+                                        >
+                                            <i class="glyphicon glyphicon-lock"></i>
+                                        	Admin
+                                        </a>
+                                    </li>
+                                    <li class="" style="width: 25%;">
+                                        <a 
+                                            href="#tabaides" 
+                                            data-toggle="tab"
+                                            onclick="return false;"
+                                        >
+                                            <i class="glyphicon glyphicon-question-sign"></i>
+                                            Aides
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    {% block tab %}
+                                    	<br>
+
+                                        {% if message.status == 'succes' %}
+                                        <div class="alert alert-success">
+                                            <strong>Succes!</strong> 
+                                            {{message.text}}
+                                        </div>
+                                        {% endif %} 
+                                        {% if message.status == 'erreur' %}
+                                        <div class="alert alert-danger">
+                                            <strong>Erreur!</strong> 
+                                            {{message.text}}
+                                        </div>
+                                        {% endif %}      
+
+										<div class="row">
+			                            {{ form_start(
+				                            	form, 
+				                            	{'attr': {'class': 'form-horizontal'}}
+			                            	) 
+			                            }}
+			                                <div class="col-lg-6" style="padding-left: 32px;padding-right: 32px;">
+			                                        <div class="form-group">
+			                                            <label>
+			                                            	Nom
+			                                            </label>
+			                                            {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+			                                        </div>
+			                                        <div class="form-group">
+			                                            <label>Prenom</label>
+			                                            {{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prenom'}}) }}
+			                                        </div>
+                                                    <div class="form-group">
+                                                        <label>Téléphone</label>
+                                                        {{ form_widget(form.telephone, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone'}}) }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button 
+                                                            type="submit" 
+                                                            class="btn btn-success"
+                                                        >
+                                                            Modifier
+                                                        </button>
+                                                        <a 
+                                                            href="{{ path('er_cherche') }}"
+                                                            class="btn btn-warning"
+                                                        >
+                                                            Annuler
+                                                        </a>
+                                                    </div>
+			                                </div>
+			                                <!-- /.col-lg-6 (nested) -->
+			                                <div class="col-lg-6" style="padding-left: 32px;padding-right: 32px;">
+                                                <div class="form-group">
+                                                    <label>Fonction</label>
+                                                    {{ form_widget(form.fonction, {'attr': {'class': 'form-control', 'placeholder': 'Fonction'}}) }}
+                                                </div>
+		                                        <div class="form-group">
+		                                            <label>CIN</label>
+		                                            {{ form_widget(form.cin, {'attr': {'class': 'form-control', 'placeholder': 'CIN', 'readonly': 'true'}}) }}
+		                                        </div>
+			                                </div>
+			                                <!-- /.col-lg-6 (nested) -->
+	                                    {{ form_end(form) }}
+			                            </div>
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                {% endblock %}

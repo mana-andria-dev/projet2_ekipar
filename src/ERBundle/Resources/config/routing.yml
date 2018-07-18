@@ -5,8 +5,11 @@ er_ajout:
     path:     /ajout
     defaults: { _controller: ERBundle:Membre:ajouter }
 er_cherche:
-    path:     /cherche/{page}
-    defaults: { _controller: ERBundle:Membre:chercher, page: 1 }
+    path:     /cherche/{page}/{trie}/{ordre}
+    defaults: { _controller: ERBundle:Membre:chercher, page: 1, trie: 'id', ordre: 'DESC' }
+er_modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: ERBundle:Membre:modifier }
 er_admin:
     path:     /admin
     defaults: { _controller: ERBundle:Membre:admin }

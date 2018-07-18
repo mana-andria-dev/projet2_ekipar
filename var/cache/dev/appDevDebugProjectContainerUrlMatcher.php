@@ -125,8 +125,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // er_cherche
-            if (0 === strpos($pathinfo, '/ekipar/cherche') && preg_match('#^/ekipar/cherche(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'er_cherche')), array (  '_controller' => 'ERBundle\\Controller\\MembreController::chercherAction',  'page' => 1,));
+            if (0 === strpos($pathinfo, '/ekipar/cherche') && preg_match('#^/ekipar/cherche(?:/(?P<page>[^/]++)(?:/(?P<trie>[^/]++)(?:/(?P<ordre>[^/]++))?)?)?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'er_cherche')), array (  '_controller' => 'ERBundle\\Controller\\MembreController::chercherAction',  'page' => 1,  'trie' => 'id',  'ordre' => 'DESC',));
+            }
+
+            // er_modifier
+            if (0 === strpos($pathinfo, '/ekipar/modifier') && preg_match('#^/ekipar/modifier/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'er_modifier')), array (  '_controller' => 'ERBundle\\Controller\\MembreController::modifierAction',));
             }
 
             // er_admin
