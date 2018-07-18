@@ -13,3 +13,6 @@ er_admin:
 er_supprimer:
     path:     /supprimer/{id}
     defaults: { _controller: ERBundle:Membre:supprimer }
+er_export:
+    path:     /export
+    defaults: { _controller: ERBundle:Membre:exportexcel }

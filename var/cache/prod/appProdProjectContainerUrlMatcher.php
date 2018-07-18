@@ -52,13 +52,18 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
             }
 
             // er_cherche
-            if ($pathinfo === '/ekipar/cherche') {
-                return array (  '_controller' => 'ERBundle\\Controller\\MembreController::chercherAction',  '_route' => 'er_cherche',);
+            if (0 === strpos($pathinfo, '/ekipar/cherche') && preg_match('#^/ekipar/cherche(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'er_cherche')), array (  '_controller' => 'ERBundle\\Controller\\MembreController::chercherAction',  'page' => 1,));
             }
 
             // er_admin
             if ($pathinfo === '/ekipar/admin') {
                 return array (  '_controller' => 'ERBundle\\Controller\\MembreController::adminAction',  '_route' => 'er_admin',);
+            }
+
+            // er_supprimer
+            if (0 === strpos($pathinfo, '/ekipar/supprimer') && preg_match('#^/ekipar/supprimer/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'er_supprimer')), array (  '_controller' => 'ERBundle\\Controller\\MembreController::supprimerAction',));
             }
 
         }

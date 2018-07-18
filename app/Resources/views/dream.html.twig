@@ -13,6 +13,7 @@
         <link href="{{ asset('assets/js/morris/morris-0.4.3.min.css') }}" rel="stylesheet" />
         <!-- Custom Styles-->
         <link href="{{ asset('assets/css/custom-styles.css ') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/typeahead/jquery.typeahead.css ') }}" rel="stylesheet" />
     </head>
     <body>
         {% block body %}
@@ -102,15 +103,16 @@
 
                 {% block javascripts %}
                     <!-- jQuery Js -->
-                    <script src="{{ asset('assets/js/jquery-1.10.2.js') }}"></script>
+                    <script src="{{ asset('assets/js/jquery-2.1.0.min.js') }}"></script>
                     <!-- Bootstrap Js -->
                     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
                     <!-- Metis Menu Js -->
                     <script src="{{ asset('assets/js/jquery.metisMenu.js') }}"></script>
                     <!-- Morris Chart Js -->
                     <script src="{{ asset('assets/js/morris/raphael-2.1.0.min.js') }}"></script>
-                    <script src="{{ asset('assets/js/morris/morris.js') }}"></script>
+                    <!-- <script src="{{ asset('assets/js/morris/morris.js') }}"></script> -->
                     <!-- Custom Js -->
+                    <script src="{{ asset('assets/typeahead/jquery.typeahead.js') }}"></script>           
                     <script src="{{ asset('assets/js/custom-scripts.js') }}"></script>           
                 {% endblock %}
 

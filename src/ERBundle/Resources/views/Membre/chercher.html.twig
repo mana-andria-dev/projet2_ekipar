@@ -59,10 +59,45 @@
                                         <div 
                                             class="table-responsive" 
                                         >
-                                            <div style="margin-bottom: 5px; width: 300px; border: 1px solid #24691c; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #318407c9;">
-                                                <i class="fa fa-users"></i>
-                                                {{ TotalMembres }} Enregistrements
-                                            </div>                                        
+
+                                            <div class="row" style="margin-top: 10px;">
+                                                <div class="col-md-8">
+                                                    <form>
+                                                        <div class="typeahead__container">
+                                                            <div class="typeahead__field">
+
+                                                                <span class="typeahead__query">
+                                                                    <input 
+                                                                        class="js-typeahead"
+                                                                        name="q"
+                                                                        type="search"
+                                                                        autofocus
+                                                                        autocomplete="off"
+                                                                        placeholder="Rechercher des membres"
+                                                                        style="font-size: 15px;"
+                                                                    >
+                                                                </span>
+                                                                <span class="typeahead__button">
+                                                                    <button 
+                                                                        type="submit" 
+                                                                        style="height: 100%;font-size: 14px;"
+                                                                        onclick="return false;" 
+                                                                        >
+                                                                        <span class="typeahead__search-icon"></span>
+                                                                    </button>
+                                                                </span>                          
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div style="margin-bottom: 5px; width: 300px; border: 1px solid #24691c; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #318407c9;">
+                                                        <i class="fa fa-users"></i>
+                                                        {{ TotalMembres }} Enregistrements
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <table 
                                                 class="table table-striped"
                                                 style="border-right: 1px solid #dddddd; border-left: 1px solid #dddddd; border-bottom: 1px solid #dddddd;"    
@@ -73,6 +108,12 @@
                                                 <td class="col-md-3"><span style="color: black;"><b>Fonction</b></span></td>
                                                 <td class="col-md-3"><span style="color: black;"><b>Action</b></span></td>
                                             </tr>
+                                            <script type="text/javascript">
+                                                var datas = [];
+                                                {% for s in dataSearch %}
+                                                    datas.push("{{s}}");
+                                                {% endfor %}
+                                            </script>
                                             {% for Membre in Membres %}
                                                 <tr class="row">
                                                     <td class="col-md-3">{{ Membre.nom }}</td>
