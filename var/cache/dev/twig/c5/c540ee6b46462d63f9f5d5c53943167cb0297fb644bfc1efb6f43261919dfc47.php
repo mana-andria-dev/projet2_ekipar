@@ -21,20 +21,20 @@ class __TwigTemplate_688986f797f584b3f6f0e30eca78ea4e839d4d45896be0dbe3bbe366bc8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_44c3af8a1330f86d535e951cb0ad8740371c8c58e45f53aa6bba587d651c158e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_44c3af8a1330f86d535e951cb0ad8740371c8c58e45f53aa6bba587d651c158e->enter($__internal_44c3af8a1330f86d535e951cb0ad8740371c8c58e45f53aa6bba587d651c158e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ERBundle:Membre:admin.html.twig"));
+        $__internal_1b5a688fff5c40cb6b5af7ce0eca3dadae8a37e56d5569271c19d94713326f65 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1b5a688fff5c40cb6b5af7ce0eca3dadae8a37e56d5569271c19d94713326f65->enter($__internal_1b5a688fff5c40cb6b5af7ce0eca3dadae8a37e56d5569271c19d94713326f65_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ERBundle:Membre:admin.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_44c3af8a1330f86d535e951cb0ad8740371c8c58e45f53aa6bba587d651c158e->leave($__internal_44c3af8a1330f86d535e951cb0ad8740371c8c58e45f53aa6bba587d651c158e_prof);
+        $__internal_1b5a688fff5c40cb6b5af7ce0eca3dadae8a37e56d5569271c19d94713326f65->leave($__internal_1b5a688fff5c40cb6b5af7ce0eca3dadae8a37e56d5569271c19d94713326f65_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_552336e38db30d215d4661587f6b5c54b5e17db2e9ce1ff6b7807cbe113850db = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_552336e38db30d215d4661587f6b5c54b5e17db2e9ce1ff6b7807cbe113850db->enter($__internal_552336e38db30d215d4661587f6b5c54b5e17db2e9ce1ff6b7807cbe113850db_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_b80a5c9c54c63ebe746f2178be3b63833ceb985bc8759d5d4b98a64ccb9c441e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b80a5c9c54c63ebe746f2178be3b63833ceb985bc8759d5d4b98a64ccb9c441e->enter($__internal_b80a5c9c54c63ebe746f2178be3b63833ceb985bc8759d5d4b98a64ccb9c441e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "                    <div id=\"page-wrapper\">
@@ -100,14 +100,33 @@ class __TwigTemplate_688986f797f584b3f6f0e30eca78ea4e839d4d45896be0dbe3bbe366bc8
                                     <div class=\"alert alert-danger\">
                                         <strong>Attention !</strong> 
                                         Cette page est reservée à l'administarteur
-                                    </div>                                    
+                                    </div>   
+                                    <div class=\"row\">
+                                        <div class=\"col-md-12\">
+                                            <a class=\"btn btn-success\" 
+                                                href=\"";
+        // line 62
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_export");
+        echo "\" 
+                                            >
+                                                <img 
+                                                    src=\"";
+        // line 65
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/icons/if_logo_brand_brands_logos_excel_2993694.png"), "html", null, true);
+        echo "\"
+                                                    style=\"width: 6%; float: left;\" 
+                                                >
+                                                Exporter les données en excel
+                                            </a>
+                                        </div>
+                                    </div>                                 
                                 </div>
                             </div>
                         </div>                        
                     </div>
                 ";
         
-        $__internal_552336e38db30d215d4661587f6b5c54b5e17db2e9ce1ff6b7807cbe113850db->leave($__internal_552336e38db30d215d4661587f6b5c54b5e17db2e9ce1ff6b7807cbe113850db_prof);
+        $__internal_b80a5c9c54c63ebe746f2178be3b63833ceb985bc8759d5d4b98a64ccb9c441e->leave($__internal_b80a5c9c54c63ebe746f2178be3b63833ceb985bc8759d5d4b98a64ccb9c441e_prof);
 
     }
 
@@ -123,7 +142,7 @@ class __TwigTemplate_688986f797f584b3f6f0e30eca78ea4e839d4d45896be0dbe3bbe366bc8
 
     public function getDebugInfo()
     {
-        return array (  77 => 33,  64 => 23,  51 => 13,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  115 => 65,  109 => 62,  77 => 33,  64 => 23,  51 => 13,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -193,7 +212,20 @@ class __TwigTemplate_688986f797f584b3f6f0e30eca78ea4e839d4d45896be0dbe3bbe366bc8
                                     <div class=\"alert alert-danger\">
                                         <strong>Attention !</strong> 
                                         Cette page est reservée à l'administarteur
-                                    </div>                                    
+                                    </div>   
+                                    <div class=\"row\">
+                                        <div class=\"col-md-12\">
+                                            <a class=\"btn btn-success\" 
+                                                href=\"{{ path('er_export') }}\" 
+                                            >
+                                                <img 
+                                                    src=\"{{ asset('images/icons/if_logo_brand_brands_logos_excel_2993694.png') }}\"
+                                                    style=\"width: 6%; float: left;\" 
+                                                >
+                                                Exporter les données en excel
+                                            </a>
+                                        </div>
+                                    </div>                                 
                                 </div>
                             </div>
                         </div>                        

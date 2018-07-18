@@ -22,20 +22,20 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_838387edde51fedbc2c596c8240a5e069139ed4ceff40d9c83c815369fc9b27f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_838387edde51fedbc2c596c8240a5e069139ed4ceff40d9c83c815369fc9b27f->enter($__internal_838387edde51fedbc2c596c8240a5e069139ed4ceff40d9c83c815369fc9b27f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ERBundle:Membre:chercher.html.twig"));
+        $__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033->enter($__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ERBundle:Membre:chercher.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_838387edde51fedbc2c596c8240a5e069139ed4ceff40d9c83c815369fc9b27f->leave($__internal_838387edde51fedbc2c596c8240a5e069139ed4ceff40d9c83c815369fc9b27f_prof);
+        $__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033->leave($__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_5b830ed34c540ea17f2f93e965ee62d59914ed99f4ba743cbf24b934c55b90e8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5b830ed34c540ea17f2f93e965ee62d59914ed99f4ba743cbf24b934c55b90e8->enter($__internal_5b830ed34c540ea17f2f93e965ee62d59914ed99f4ba743cbf24b934c55b90e8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf->enter($__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         echo "             
                     <div id=\"page-wrapper\">
@@ -104,34 +104,69 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
                                     ";
         // line 58
         $this->displayBlock('tab', $context, $blocks);
-        // line 157
+        // line 198
         echo "                                </div>
                             </div>
                         </div>                        
                     </div>
                 ";
         
-        $__internal_5b830ed34c540ea17f2f93e965ee62d59914ed99f4ba743cbf24b934c55b90e8->leave($__internal_5b830ed34c540ea17f2f93e965ee62d59914ed99f4ba743cbf24b934c55b90e8_prof);
+        $__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf->leave($__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf_prof);
 
     }
 
     // line 58
     public function block_tab($context, array $blocks = array())
     {
-        $__internal_98d090343a9f6932a48534c2be57b7008cc9a0ae5cde49e12822f6ce07e59fe4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_98d090343a9f6932a48534c2be57b7008cc9a0ae5cde49e12822f6ce07e59fe4->enter($__internal_98d090343a9f6932a48534c2be57b7008cc9a0ae5cde49e12822f6ce07e59fe4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tab"));
+        $__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0->enter($__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tab"));
 
         echo "                                   
                                         <div 
                                             class=\"table-responsive\" 
                                         >
-                                            <div style=\"margin-bottom: 5px; width: 300px; border: 1px solid #24691c; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #318407c9;\">
-                                                <i class=\"fa fa-users\"></i>
-                                                ";
-        // line 64
+
+                                            <div class=\"row\" style=\"margin-top: 10px;\">
+                                                <div class=\"col-md-8\">
+                                                    <form>
+                                                        <div class=\"typeahead__container\">
+                                                            <div class=\"typeahead__field\">
+
+                                                                <span class=\"typeahead__query\">
+                                                                    <input 
+                                                                        class=\"js-typeahead\"
+                                                                        name=\"q\"
+                                                                        type=\"search\"
+                                                                        autofocus
+                                                                        autocomplete=\"off\"
+                                                                        placeholder=\"Rechercher des membres\"
+                                                                        style=\"font-size: 15px;\"
+                                                                    >
+                                                                </span>
+                                                                <span class=\"typeahead__button\">
+                                                                    <button 
+                                                                        type=\"submit\" 
+                                                                        style=\"height: 100%;font-size: 14px;\"
+                                                                        onclick=\"return false;\" 
+                                                                        >
+                                                                        <span class=\"typeahead__search-icon\"></span>
+                                                                    </button>
+                                                                </span>                          
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class=\"col-md-4\">
+                                                    <div style=\"margin-bottom: 5px; width: 300px; border: 1px solid #24691c; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #318407c9;\">
+                                                        <i class=\"fa fa-users\"></i>
+                                                        ";
+        // line 96
         echo twig_escape_filter($this->env, ($context["TotalMembres"] ?? $this->getContext($context, "TotalMembres")), "html", null, true);
         echo " Enregistrements
-                                            </div>                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <table 
                                                 class=\"table table-striped\"
                                                 style=\"border-right: 1px solid #dddddd; border-left: 1px solid #dddddd; border-bottom: 1px solid #dddddd;\"    
@@ -142,23 +177,41 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
                                                 <td class=\"col-md-3\"><span style=\"color: black;\"><b>Fonction</b></span></td>
                                                 <td class=\"col-md-3\"><span style=\"color: black;\"><b>Action</b></span></td>
                                             </tr>
+                                            <script type=\"text/javascript\">
+                                                var datas = [];
+                                                ";
+        // line 113
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["dataSearch"] ?? $this->getContext($context, "dataSearch")));
+        foreach ($context['_seq'] as $context["_key"] => $context["s"]) {
+            // line 114
+            echo "                                                    datas.push(\"";
+            echo twig_escape_filter($this->env, $context["s"], "html", null, true);
+            echo "\");
+                                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['s'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 116
+        echo "                                            </script>
                                             ";
-        // line 76
+        // line 117
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["Membres"] ?? $this->getContext($context, "Membres")));
         foreach ($context['_seq'] as $context["_key"] => $context["Membre"]) {
-            // line 77
+            // line 118
             echo "                                                <tr class=\"row\">
                                                     <td class=\"col-md-3\">";
-            // line 78
+            // line 119
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "nom", array()), "html", null, true);
             echo "</td>
                                                     <td class=\"col-md-3\">";
-            // line 79
+            // line 120
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "prenom", array()), "html", null, true);
             echo "</td>
                                                     <td class=\"col-md-3\">";
-            // line 80
+            // line 121
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "fonction", array()), "html", null, true);
             echo "</td>
                                                     <td class=\"col-md-3\">
@@ -170,7 +223,7 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
                                                                 <button 
                                                                     class=\"btn btn-sm btn-danger\"
                                                                     data-toggle=\"modal\" data-target=\"#modalSuppression";
-            // line 89
+            // line 130
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "id", array()), "html", null, true);
             echo "\"
                                                                 >
@@ -179,10 +232,10 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
                                                                 <!-- <a 
                                                                     href=\"
                                                                     ";
-            // line 95
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 98
+            // line 136
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 139
 $context["Membre"], "id", array()))), "html", null, true);
-            // line 100
+            // line 141
             echo "\" 
                                                                     class=\"btn btn-sm btn-danger\">
                                                                     <i class=\"fa fa-pencil\"></i> 
@@ -195,13 +248,13 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                 <div 
                                                     class=\"modal fade in\" 
                                                     id=\"modalSuppression";
-            // line 111
+            // line 152
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "id", array()), "html", null, true);
             echo "\" 
                                                     tabindex=\"-1\" 
                                                     role=\"dialog\" 
                                                     aria-labelledby=\"modalSuppression";
-            // line 114
+            // line 155
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "id", array()), "html", null, true);
             echo "\" 
                                                     aria-hidden=\"false\"
@@ -220,7 +273,7 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                             </div>
                                                             <div class=\"modal-body\">
                                                                 <h4>Voulez vous vraiment supprimer le membre <b>";
-            // line 130
+            // line 171
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "nom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "prenom", array()), "html", null, true);
@@ -231,10 +284,10 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                                 <a 
                                                                     href=\"
                                                                     ";
-            // line 136
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 139
+            // line 177
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 180
 $context["Membre"], "id", array()))), "html", null, true);
-            // line 141
+            // line 182
             echo "\"
                                                                     class=\"btn btn-danger\"
                                                                 >
@@ -249,18 +302,18 @@ $context["Membre"], "id", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Membre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 151
+        // line 192
         echo "                                            </table>
                                             <div class=\"text-center\">
                                                 ";
-        // line 153
+        // line 194
         echo $this->env->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->render($this->env, ($context["Membres"] ?? $this->getContext($context, "Membres")));
         echo "
                                             </div>
                                         </div>
                                     ";
         
-        $__internal_98d090343a9f6932a48534c2be57b7008cc9a0ae5cde49e12822f6ce07e59fe4->leave($__internal_98d090343a9f6932a48534c2be57b7008cc9a0ae5cde49e12822f6ce07e59fe4_prof);
+        $__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0->leave($__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0_prof);
 
     }
 
@@ -276,7 +329,7 @@ $context["Membre"], "id", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  257 => 153,  253 => 151,  238 => 141,  236 => 139,  235 => 136,  224 => 130,  205 => 114,  199 => 111,  186 => 100,  184 => 98,  183 => 95,  174 => 89,  162 => 80,  158 => 79,  154 => 78,  151 => 77,  147 => 76,  132 => 64,  119 => 58,  108 => 157,  106 => 58,  80 => 35,  66 => 24,  52 => 13,  35 => 3,  11 => 1,);
+        return array (  310 => 194,  306 => 192,  291 => 182,  289 => 180,  288 => 177,  277 => 171,  258 => 155,  252 => 152,  239 => 141,  237 => 139,  236 => 136,  227 => 130,  215 => 121,  211 => 120,  207 => 119,  204 => 118,  200 => 117,  197 => 116,  188 => 114,  184 => 113,  164 => 96,  119 => 58,  108 => 198,  106 => 58,  80 => 35,  66 => 24,  52 => 13,  35 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -350,10 +403,45 @@ $context["Membre"], "id", array()))), "html", null, true);
                                         <div 
                                             class=\"table-responsive\" 
                                         >
-                                            <div style=\"margin-bottom: 5px; width: 300px; border: 1px solid #24691c; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #318407c9;\">
-                                                <i class=\"fa fa-users\"></i>
-                                                {{ TotalMembres }} Enregistrements
-                                            </div>                                        
+
+                                            <div class=\"row\" style=\"margin-top: 10px;\">
+                                                <div class=\"col-md-8\">
+                                                    <form>
+                                                        <div class=\"typeahead__container\">
+                                                            <div class=\"typeahead__field\">
+
+                                                                <span class=\"typeahead__query\">
+                                                                    <input 
+                                                                        class=\"js-typeahead\"
+                                                                        name=\"q\"
+                                                                        type=\"search\"
+                                                                        autofocus
+                                                                        autocomplete=\"off\"
+                                                                        placeholder=\"Rechercher des membres\"
+                                                                        style=\"font-size: 15px;\"
+                                                                    >
+                                                                </span>
+                                                                <span class=\"typeahead__button\">
+                                                                    <button 
+                                                                        type=\"submit\" 
+                                                                        style=\"height: 100%;font-size: 14px;\"
+                                                                        onclick=\"return false;\" 
+                                                                        >
+                                                                        <span class=\"typeahead__search-icon\"></span>
+                                                                    </button>
+                                                                </span>                          
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class=\"col-md-4\">
+                                                    <div style=\"margin-bottom: 5px; width: 300px; border: 1px solid #24691c; float: right; padding-bottom: 2px; padding-top: 2px; text-align: center; color: white; margin-top: 5px; background: #318407c9;\">
+                                                        <i class=\"fa fa-users\"></i>
+                                                        {{ TotalMembres }} Enregistrements
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <table 
                                                 class=\"table table-striped\"
                                                 style=\"border-right: 1px solid #dddddd; border-left: 1px solid #dddddd; border-bottom: 1px solid #dddddd;\"    
@@ -364,6 +452,12 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                 <td class=\"col-md-3\"><span style=\"color: black;\"><b>Fonction</b></span></td>
                                                 <td class=\"col-md-3\"><span style=\"color: black;\"><b>Action</b></span></td>
                                             </tr>
+                                            <script type=\"text/javascript\">
+                                                var datas = [];
+                                                {% for s in dataSearch %}
+                                                    datas.push(\"{{s}}\");
+                                                {% endfor %}
+                                            </script>
                                             {% for Membre in Membres %}
                                                 <tr class=\"row\">
                                                     <td class=\"col-md-3\">{{ Membre.nom }}</td>

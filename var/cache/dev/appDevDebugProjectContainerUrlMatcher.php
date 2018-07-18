@@ -139,6 +139,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'er_supprimer')), array (  '_controller' => 'ERBundle\\Controller\\MembreController::supprimerAction',));
             }
 
+            // er_export
+            if ($pathinfo === '/ekipar/export') {
+                return array (  '_controller' => 'ERBundle\\Controller\\MembreController::exportexcelAction',  '_route' => 'er_export',);
+            }
+
         }
 
         // homepage
