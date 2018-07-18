@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class MembreController extends Controller {
 
@@ -95,12 +95,19 @@ class MembreController extends Controller {
 
     public function chercherAction($page) {
     	//composer require knplabs/knp-paginator-bundle
+    	//https://github.com/liuggio/ExcelBundle
 		$em = $this->getDoctrine()->getManager();
 
 		$TotalMembres = $em->getRepository('ERBundle:Membre')->findAll();
+		$dataSearch = [];
+		foreach ($TotalMembres as $key => $value) {
+			$dataSearch[] = $value->getNom() . ' ' . $value->getPrenom();
+		}
+
 		$TotalMembres = count($TotalMembres);
 
-		$listeMembres = $em->getRepository('ERBundle:Membre')->findAll();
+		$listeMembres = $em->getRepository('ERBundle:Membre')->findBy(array(), array('id' => 'DESC'));
+		
 		$Membres  = $this->get('knp_paginator')->paginate(
 			$listeMembres,
 			$page /*le numéro de la page à afficher*/,
@@ -113,8 +120,9 @@ class MembreController extends Controller {
 
 	    // Le render ne change pas, on passait avant un tableau, maintenant un objet
 	    return $this->render('ERBundle:Membre:chercher.html.twig', array(
-	      'Membres' => $Membres,
-	      'TotalMembres' => $TotalMembres
+	      'Membres' 		=> $Membres,
+	      'dataSearch' 		=> $dataSearch,
+	      'TotalMembres' 	=> $TotalMembres
 	    ));
     }
 
@@ -133,5 +141,106 @@ class MembreController extends Controller {
         }    	
 	    return $this->redirectToRoute('er_cherche');
 	    // return $this->redirectToRoute('cherche', array('id' => $advert->getId()));
-    }    
+    }
+
+    public function exportexcelAction() {
+        // ask the service for a Excel5
+       $phpExcelObject = $this->get('phpexcel')->createPHPExcelObject();
+
+       $phpExcelObject->getProperties()->setCreator("liuggio")
+           ->setLastModifiedBy("Ekipar")
+           ->setTitle("Liste des membres")
+           ->setSubject("Liste des membres")
+           ->setDescription("Liste des membres")
+           ->setKeywords("office 2005 openxml php")
+           ->setCategory("Liste des membres");
+
+		$em = $this->getDoctrine()->getManager();
+
+		$listeMembres = $em->getRepository('ERBundle:Membre')->findBy(
+			array(), array('id' => 'DESC')
+		);
+
+    	$celA = 'A1';
+    	$celB = 'B1';
+    	$celC = 'C1';
+       	$phpExcelObject->setActiveSheetIndex(0)
+           ->setCellValue($celA, 'NOM')
+           ->setCellValue($celB, 'PRENOM')
+           ->setCellValue($celC, 'FONCTION');	
+
+		$phpExcelObject
+			->getActiveSheet()
+			->getStyle('A1:A1')
+			->applyFromArray(
+				array(
+					'font' => array(
+						'size' => 18,
+						'bold' => true,
+						'color' => array('rgb' => '0000ff')
+					)
+				)
+			);	
+
+		$phpExcelObject
+			->getActiveSheet()
+			->getStyle('B1:B1')
+			->applyFromArray(
+				array(
+					'font' => array(
+						'size' => 18,
+						'bold' => true,
+						'color' => array('rgb' => '0000ff')
+					)
+				)
+			);	
+
+		$phpExcelObject
+			->getActiveSheet()
+			->getStyle('C1:C1')
+			->applyFromArray(
+				array(
+					'font' => array(
+						'size' => 18,
+						'bold' => true,
+						'color' => array('rgb' => '0000ff')
+					)
+				)
+			);           
+
+
+		foreach ($listeMembres as $key => $value) {
+			$keyCellule = $key + 2;
+			$dataSearch[] = $value->getNom() . ' ' . $value->getPrenom();
+        	$celA = 'A' . $keyCellule;
+        	$celB = 'B' . $keyCellule;
+        	$celC = 'C' . $keyCellule;
+	       	$phpExcelObject->setActiveSheetIndex(0)
+	           ->setCellValue($celA, $value->getNom())
+	           ->setCellValue($celB, $value->getPrenom())			
+	           ->setCellValue($celC, $value->getFonction());
+		}          
+
+
+       $phpExcelObject->getActiveSheet()->setTitle('Simple');
+       // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+       $phpExcelObject->setActiveSheetIndex(0);
+
+        // create the writer
+        $writer = $this->get('phpexcel')->createWriter($phpExcelObject, 'Excel5');
+        // create the response
+        $response = $this->get('phpexcel')->createStreamedResponse($writer);
+        // adding headers
+        $dispositionHeader = $response->headers->makeDisposition(
+            ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+            'Listes_des_membres.xls'
+        );
+        $response->headers->set('Content-Type', 'text/vnd.ms-excel; charset=utf-8');
+        $response->headers->set('Pragma', 'public');
+        $response->headers->set('Cache-Control', 'maxage=1');
+        $response->headers->set('Content-Disposition', $dispositionHeader);
+
+        return $response;        
+    }
+
 }

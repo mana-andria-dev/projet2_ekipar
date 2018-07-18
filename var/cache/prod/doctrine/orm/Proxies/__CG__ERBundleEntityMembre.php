@@ -64,10 +64,10 @@ class Membre extends \ERBundle\Entity\Membre implements \Doctrine\ORM\Proxy\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'id', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'nom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'prenom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'fonction'];
+            return ['__isInitialized__', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'id', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'nom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'prenom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'fonction', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'cin', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'telephone'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'id', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'nom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'prenom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'fonction'];
+        return ['__isInitialized__', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'id', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'nom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'prenom', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'fonction', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'cin', '' . "\0" . 'ERBundle\\Entity\\Membre' . "\0" . 'telephone'];
     }
 
     /**
@@ -252,6 +252,50 @@ class Membre extends \ERBundle\Entity\Membre implements \Doctrine\ORM\Proxy\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFonction', []);
 
         return parent::getFonction();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCin($cin)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCin', [$cin]);
+
+        return parent::setCin($cin);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCin()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCin', []);
+
+        return parent::getCin();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTelephone($telephone)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTelephone', [$telephone]);
+
+        return parent::setTelephone($telephone);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTelephone()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTelephone', []);
+
+        return parent::getTelephone();
     }
 
 }
