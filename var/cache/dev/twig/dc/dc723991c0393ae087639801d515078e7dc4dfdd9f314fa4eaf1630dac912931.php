@@ -22,20 +22,20 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033->enter($__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ERBundle:Membre:chercher.html.twig"));
+        $__internal_0d49c3fe93ae547b4fd7fdf61a78ad031bb39df9648725759b631f62dbcfc4c4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0d49c3fe93ae547b4fd7fdf61a78ad031bb39df9648725759b631f62dbcfc4c4->enter($__internal_0d49c3fe93ae547b4fd7fdf61a78ad031bb39df9648725759b631f62dbcfc4c4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ERBundle:Membre:chercher.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033->leave($__internal_c9959c4892f0a43145352b9e4df0bff9bcc6f426ae528c39289e74da3b925033_prof);
+        $__internal_0d49c3fe93ae547b4fd7fdf61a78ad031bb39df9648725759b631f62dbcfc4c4->leave($__internal_0d49c3fe93ae547b4fd7fdf61a78ad031bb39df9648725759b631f62dbcfc4c4_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf->enter($__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_787880a232e4b777524990b590b27d48c1727984025b330266b5d639511102f2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_787880a232e4b777524990b590b27d48c1727984025b330266b5d639511102f2->enter($__internal_787880a232e4b777524990b590b27d48c1727984025b330266b5d639511102f2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         echo "             
                     <div id=\"page-wrapper\">
@@ -104,22 +104,22 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
                                     ";
         // line 58
         $this->displayBlock('tab', $context, $blocks);
-        // line 198
+        // line 338
         echo "                                </div>
                             </div>
                         </div>                        
                     </div>
                 ";
         
-        $__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf->leave($__internal_710ef39a034533c2c2a3b44fcfa816f231d2962d406313afc04fe17aa269e7cf_prof);
+        $__internal_787880a232e4b777524990b590b27d48c1727984025b330266b5d639511102f2->leave($__internal_787880a232e4b777524990b590b27d48c1727984025b330266b5d639511102f2_prof);
 
     }
 
     // line 58
     public function block_tab($context, array $blocks = array())
     {
-        $__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0->enter($__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tab"));
+        $__internal_41112a8a9239ef6e9c041f50b759f9176e3a74b387c1449d6dcde8344cf73851 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_41112a8a9239ef6e9c041f50b759f9176e3a74b387c1449d6dcde8344cf73851->enter($__internal_41112a8a9239ef6e9c041f50b759f9176e3a74b387c1449d6dcde8344cf73851_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tab"));
 
         echo "                                   
                                         <div 
@@ -172,19 +172,136 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
                                                 style=\"border-right: 1px solid #dddddd; border-left: 1px solid #dddddd; border-bottom: 1px solid #dddddd;\"    
                                             >
                                             <tr class=\"row\">
-                                                <td class=\"col-md-3\"><span style=\"color: black;\"><b>Nom</b></span></td>
-                                                <td class=\"col-md-3\"><span style=\"color: black;\"><b>Prenom</b></span></td>
-                                                <td class=\"col-md-3\"><span style=\"color: black;\"><b>Fonction</b></span></td>
+                                                <td 
+                                                    class=\"col-md-3\" 
+                                                    style=\"padding-bottom: 0px; padding-top: 0px;\"
+                                                >
+                                                    <a 
+                                                        href=\"";
+        // line 111
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_cherche", array("page" => 1, "trie" => "nom", "ordre" => "ASC")), "html", null, true);
+        // line 120
+        echo "\"
+                                                        style=\"display: block; width: 5px;\"
+                                                        title=\"Trier par ordre croissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"";
+        // line 125
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/icons/fleche_croissant.png"), "html", null, true);
+        echo "\" alt=\"Trier par ordre croissant\">
+                                                    </a>
+                                                    <a 
+                                                        href=\"";
+        // line 128
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_cherche", array("page" => 1, "trie" => "nom", "ordre" => "DESC")), "html", null, true);
+        // line 137
+        echo "\"
+                                                        title=\"Trier par ordre décroissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"";
+        // line 141
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/icons/fleche_decroissant.png"), "html", null, true);
+        echo "\" alt=\"Trier par ordre décroissant\"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style=\"color: black; position: relative; top: -8px;left: 8px;\"
+                                                    >
+                                                        <b>Nom</b>
+                                                    </span>
+                                                </td>
+                                                <td 
+                                                    class=\"col-md-3\" 
+                                                    style=\"padding-bottom: 0px; padding-top: 0px;\"
+                                                >
+                                                    <a 
+                                                        href=\"";
+        // line 155
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_cherche", array("page" => 1, "trie" => "prenom", "ordre" => "ASC")), "html", null, true);
+        // line 164
+        echo "\"
+                                                        style=\"display: block; width: 5px;\"
+                                                        title=\"Trier par ordre croissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"";
+        // line 169
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/icons/fleche_croissant.png"), "html", null, true);
+        echo "\" alt=\"Trier par ordre croissant\">
+                                                    </a>
+                                                    <a 
+                                                        href=\"";
+        // line 172
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_cherche", array("page" => 1, "trie" => "prenom", "ordre" => "DESC")), "html", null, true);
+        // line 181
+        echo "\"
+                                                        title=\"Trier par ordre décroissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"";
+        // line 185
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/icons/fleche_decroissant.png"), "html", null, true);
+        echo "\" alt=\"Trier par ordre décroissant\"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style=\"color: black; position: relative; top: -8px;left: 8px;\"
+                                                    >
+                                                        <b>Prenom</b>
+                                                    </span>
+                                                </td>
+                                                <td 
+                                                    class=\"col-md-3\" 
+                                                    style=\"padding-bottom: 0px; padding-top: 0px;\"
+                                                >
+                                                    <a 
+                                                        href=\"";
+        // line 199
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_cherche", array("page" => 1, "trie" => "fonction", "ordre" => "ASC")), "html", null, true);
+        // line 208
+        echo "\"
+                                                        style=\"display: block; width: 5px;\"
+                                                        title=\"Trier par ordre croissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"";
+        // line 213
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/icons/fleche_croissant.png"), "html", null, true);
+        echo "\" alt=\"Trier par ordre croissant\">
+                                                    </a>
+                                                    <a 
+                                                        href=\"";
+        // line 216
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_cherche", array("page" => 1, "trie" => "fonction", "ordre" => "DESC")), "html", null, true);
+        // line 225
+        echo "\"
+                                                        title=\"Trier par ordre décroissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"";
+        // line 229
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/icons/fleche_decroissant.png"), "html", null, true);
+        echo "\" alt=\"Trier par ordre décroissant\"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style=\"color: black; position: relative; top: -8px;left: 8px;\"
+                                                    >
+                                                        <b>Fonction</b>
+                                                    </span>
+                                                </td>
                                                 <td class=\"col-md-3\"><span style=\"color: black;\"><b>Action</b></span></td>
                                             </tr>
                                             <script type=\"text/javascript\">
                                                 var datas = [];
                                                 ";
-        // line 113
+        // line 242
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["dataSearch"] ?? $this->getContext($context, "dataSearch")));
         foreach ($context['_seq'] as $context["_key"] => $context["s"]) {
-            // line 114
+            // line 243
             echo "                                                    datas.push(\"";
             echo twig_escape_filter($this->env, $context["s"], "html", null, true);
             echo "\");
@@ -193,37 +310,48 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['s'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 116
+        // line 245
         echo "                                            </script>
                                             ";
-        // line 117
+        // line 246
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["Membres"] ?? $this->getContext($context, "Membres")));
         foreach ($context['_seq'] as $context["_key"] => $context["Membre"]) {
-            // line 118
+            // line 247
             echo "                                                <tr class=\"row\">
                                                     <td class=\"col-md-3\">";
-            // line 119
+            // line 248
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "nom", array()), "html", null, true);
             echo "</td>
                                                     <td class=\"col-md-3\">";
-            // line 120
+            // line 249
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "prenom", array()), "html", null, true);
             echo "</td>
                                                     <td class=\"col-md-3\">";
-            // line 121
+            // line 250
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "fonction", array()), "html", null, true);
             echo "</td>
                                                     <td class=\"col-md-3\">
                                                         <div class=\"row\">
                                                             <div class=\"col-md-6\">
-                                                                <button class=\"btn btn-sm btn-primary\"><i class=\"fa fa-edit \"></i> Modifier</button>
+                                                                <a 
+                                                                    href=\"
+                                                                    ";
+            // line 256
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_modifier", array("id" => $this->getAttribute(            // line 259
+$context["Membre"], "id", array()))), "html", null, true);
+            // line 261
+            echo "\" 
+                                                                    class=\"btn btn-sm btn-primary\">
+                                                                    <i class=\"fa fa-pencil\"></i> 
+                                                                    Modifier
+                                                                </a>  
                                                             </div>
                                                             <div class=\"col-md-6\">
                                                                 <button 
                                                                     class=\"btn btn-sm btn-danger\"
                                                                     data-toggle=\"modal\" data-target=\"#modalSuppression";
-            // line 130
+            // line 270
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "id", array()), "html", null, true);
             echo "\"
                                                                 >
@@ -232,10 +360,10 @@ class __TwigTemplate_edfdd5668587613f003620814ba7ceecd6e68e1256b8b5fab289576da6c
                                                                 <!-- <a 
                                                                     href=\"
                                                                     ";
-            // line 136
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 139
+            // line 276
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 279
 $context["Membre"], "id", array()))), "html", null, true);
-            // line 141
+            // line 281
             echo "\" 
                                                                     class=\"btn btn-sm btn-danger\">
                                                                     <i class=\"fa fa-pencil\"></i> 
@@ -248,13 +376,13 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                 <div 
                                                     class=\"modal fade in\" 
                                                     id=\"modalSuppression";
-            // line 152
+            // line 292
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "id", array()), "html", null, true);
             echo "\" 
                                                     tabindex=\"-1\" 
                                                     role=\"dialog\" 
                                                     aria-labelledby=\"modalSuppression";
-            // line 155
+            // line 295
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "id", array()), "html", null, true);
             echo "\" 
                                                     aria-hidden=\"false\"
@@ -273,7 +401,7 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                             </div>
                                                             <div class=\"modal-body\">
                                                                 <h4>Voulez vous vraiment supprimer le membre <b>";
-            // line 171
+            // line 311
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "nom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["Membre"], "prenom", array()), "html", null, true);
@@ -284,10 +412,10 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                                 <a 
                                                                     href=\"
                                                                     ";
-            // line 177
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 180
+            // line 317
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("er_supprimer", array("id" => $this->getAttribute(            // line 320
 $context["Membre"], "id", array()))), "html", null, true);
-            // line 182
+            // line 322
             echo "\"
                                                                     class=\"btn btn-danger\"
                                                                 >
@@ -302,18 +430,18 @@ $context["Membre"], "id", array()))), "html", null, true);
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Membre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 192
+        // line 332
         echo "                                            </table>
                                             <div class=\"text-center\">
                                                 ";
-        // line 194
+        // line 334
         echo $this->env->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->render($this->env, ($context["Membres"] ?? $this->getContext($context, "Membres")));
         echo "
                                             </div>
                                         </div>
                                     ";
         
-        $__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0->leave($__internal_2813a4dbaeae2b241a6d9c46ad9358f0cbe3563196b3aff67d0cdfa08a000ae0_prof);
+        $__internal_41112a8a9239ef6e9c041f50b759f9176e3a74b387c1449d6dcde8344cf73851->leave($__internal_41112a8a9239ef6e9c041f50b759f9176e3a74b387c1449d6dcde8344cf73851_prof);
 
     }
 
@@ -329,7 +457,7 @@ $context["Membre"], "id", array()))), "html", null, true);
 
     public function getDebugInfo()
     {
-        return array (  310 => 194,  306 => 192,  291 => 182,  289 => 180,  288 => 177,  277 => 171,  258 => 155,  252 => 152,  239 => 141,  237 => 139,  236 => 136,  227 => 130,  215 => 121,  211 => 120,  207 => 119,  204 => 118,  200 => 117,  197 => 116,  188 => 114,  184 => 113,  164 => 96,  119 => 58,  108 => 198,  106 => 58,  80 => 35,  66 => 24,  52 => 13,  35 => 3,  11 => 1,);
+        return array (  438 => 334,  434 => 332,  419 => 322,  417 => 320,  416 => 317,  405 => 311,  386 => 295,  380 => 292,  367 => 281,  365 => 279,  364 => 276,  355 => 270,  344 => 261,  342 => 259,  341 => 256,  332 => 250,  328 => 249,  324 => 248,  321 => 247,  317 => 246,  314 => 245,  305 => 243,  301 => 242,  285 => 229,  279 => 225,  277 => 216,  271 => 213,  264 => 208,  262 => 199,  245 => 185,  239 => 181,  237 => 172,  231 => 169,  224 => 164,  222 => 155,  205 => 141,  199 => 137,  197 => 128,  191 => 125,  184 => 120,  182 => 111,  164 => 96,  119 => 58,  108 => 338,  106 => 58,  80 => 35,  66 => 24,  52 => 13,  35 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -447,9 +575,138 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                 style=\"border-right: 1px solid #dddddd; border-left: 1px solid #dddddd; border-bottom: 1px solid #dddddd;\"    
                                             >
                                             <tr class=\"row\">
-                                                <td class=\"col-md-3\"><span style=\"color: black;\"><b>Nom</b></span></td>
-                                                <td class=\"col-md-3\"><span style=\"color: black;\"><b>Prenom</b></span></td>
-                                                <td class=\"col-md-3\"><span style=\"color: black;\"><b>Fonction</b></span></td>
+                                                <td 
+                                                    class=\"col-md-3\" 
+                                                    style=\"padding-bottom: 0px; padding-top: 0px;\"
+                                                >
+                                                    <a 
+                                                        href=\"{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'nom', 
+                                                                    'ordre': 'ASC'
+                                                                }
+                                                            ) 
+                                                        }}\"
+                                                        style=\"display: block; width: 5px;\"
+                                                        title=\"Trier par ordre croissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"{{ asset('images/icons/fleche_croissant.png') }}\" alt=\"Trier par ordre croissant\">
+                                                    </a>
+                                                    <a 
+                                                        href=\"{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'nom', 
+                                                                    'ordre': 'DESC'
+                                                                }
+                                                            ) 
+                                                        }}\"
+                                                        title=\"Trier par ordre décroissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"{{ asset('images/icons/fleche_decroissant.png') }}\" alt=\"Trier par ordre décroissant\"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style=\"color: black; position: relative; top: -8px;left: 8px;\"
+                                                    >
+                                                        <b>Nom</b>
+                                                    </span>
+                                                </td>
+                                                <td 
+                                                    class=\"col-md-3\" 
+                                                    style=\"padding-bottom: 0px; padding-top: 0px;\"
+                                                >
+                                                    <a 
+                                                        href=\"{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'prenom', 
+                                                                    'ordre': 'ASC'
+                                                                }
+                                                            ) 
+                                                        }}\"
+                                                        style=\"display: block; width: 5px;\"
+                                                        title=\"Trier par ordre croissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"{{ asset('images/icons/fleche_croissant.png') }}\" alt=\"Trier par ordre croissant\">
+                                                    </a>
+                                                    <a 
+                                                        href=\"{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'prenom', 
+                                                                    'ordre': 'DESC'
+                                                                }
+                                                            ) 
+                                                        }}\"
+                                                        title=\"Trier par ordre décroissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"{{ asset('images/icons/fleche_decroissant.png') }}\" alt=\"Trier par ordre décroissant\"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style=\"color: black; position: relative; top: -8px;left: 8px;\"
+                                                    >
+                                                        <b>Prenom</b>
+                                                    </span>
+                                                </td>
+                                                <td 
+                                                    class=\"col-md-3\" 
+                                                    style=\"padding-bottom: 0px; padding-top: 0px;\"
+                                                >
+                                                    <a 
+                                                        href=\"{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'fonction', 
+                                                                    'ordre': 'ASC'
+                                                                }
+                                                            ) 
+                                                        }}\"
+                                                        style=\"display: block; width: 5px;\"
+                                                        title=\"Trier par ordre croissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"{{ asset('images/icons/fleche_croissant.png') }}\" alt=\"Trier par ordre croissant\">
+                                                    </a>
+                                                    <a 
+                                                        href=\"{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'fonction', 
+                                                                    'ordre': 'DESC'
+                                                                }
+                                                            ) 
+                                                        }}\"
+                                                        title=\"Trier par ordre décroissant\" 
+                                                    >
+                                                        <img 
+                                                            src=\"{{ asset('images/icons/fleche_decroissant.png') }}\" alt=\"Trier par ordre décroissant\"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style=\"color: black; position: relative; top: -8px;left: 8px;\"
+                                                    >
+                                                        <b>Fonction</b>
+                                                    </span>
+                                                </td>
                                                 <td class=\"col-md-3\"><span style=\"color: black;\"><b>Action</b></span></td>
                                             </tr>
                                             <script type=\"text/javascript\">
@@ -466,7 +723,18 @@ $context["Membre"], "id", array()))), "html", null, true);
                                                     <td class=\"col-md-3\">
                                                         <div class=\"row\">
                                                             <div class=\"col-md-6\">
-                                                                <button class=\"btn btn-sm btn-primary\"><i class=\"fa fa-edit \"></i> Modifier</button>
+                                                                <a 
+                                                                    href=\"
+                                                                    {{ 
+                                                                        path(
+                                                                            'er_modifier',
+                                                                            { 'id': Membre.id }
+                                                                        ) 
+                                                                    }}\" 
+                                                                    class=\"btn btn-sm btn-primary\">
+                                                                    <i class=\"fa fa-pencil\"></i> 
+                                                                    Modifier
+                                                                </a>  
                                                             </div>
                                                             <div class=\"col-md-6\">
                                                                 <button 
