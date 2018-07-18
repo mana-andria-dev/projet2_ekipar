@@ -103,9 +103,138 @@
                                                 style="border-right: 1px solid #dddddd; border-left: 1px solid #dddddd; border-bottom: 1px solid #dddddd;"    
                                             >
                                             <tr class="row">
-                                                <td class="col-md-3"><span style="color: black;"><b>Nom</b></span></td>
-                                                <td class="col-md-3"><span style="color: black;"><b>Prenom</b></span></td>
-                                                <td class="col-md-3"><span style="color: black;"><b>Fonction</b></span></td>
+                                                <td 
+                                                    class="col-md-3" 
+                                                    style="padding-bottom: 0px; padding-top: 0px;"
+                                                >
+                                                    <a 
+                                                        href="{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'nom', 
+                                                                    'ordre': 'ASC'
+                                                                }
+                                                            ) 
+                                                        }}"
+                                                        style="display: block; width: 5px;"
+                                                        title="Trier par ordre croissant" 
+                                                    >
+                                                        <img 
+                                                            src="{{ asset('images/icons/fleche_croissant.png') }}" alt="Trier par ordre croissant">
+                                                    </a>
+                                                    <a 
+                                                        href="{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'nom', 
+                                                                    'ordre': 'DESC'
+                                                                }
+                                                            ) 
+                                                        }}"
+                                                        title="Trier par ordre décroissant" 
+                                                    >
+                                                        <img 
+                                                            src="{{ asset('images/icons/fleche_decroissant.png') }}" alt="Trier par ordre décroissant"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style="color: black; position: relative; top: -8px;left: 8px;"
+                                                    >
+                                                        <b>Nom</b>
+                                                    </span>
+                                                </td>
+                                                <td 
+                                                    class="col-md-3" 
+                                                    style="padding-bottom: 0px; padding-top: 0px;"
+                                                >
+                                                    <a 
+                                                        href="{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'prenom', 
+                                                                    'ordre': 'ASC'
+                                                                }
+                                                            ) 
+                                                        }}"
+                                                        style="display: block; width: 5px;"
+                                                        title="Trier par ordre croissant" 
+                                                    >
+                                                        <img 
+                                                            src="{{ asset('images/icons/fleche_croissant.png') }}" alt="Trier par ordre croissant">
+                                                    </a>
+                                                    <a 
+                                                        href="{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'prenom', 
+                                                                    'ordre': 'DESC'
+                                                                }
+                                                            ) 
+                                                        }}"
+                                                        title="Trier par ordre décroissant" 
+                                                    >
+                                                        <img 
+                                                            src="{{ asset('images/icons/fleche_decroissant.png') }}" alt="Trier par ordre décroissant"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style="color: black; position: relative; top: -8px;left: 8px;"
+                                                    >
+                                                        <b>Prenom</b>
+                                                    </span>
+                                                </td>
+                                                <td 
+                                                    class="col-md-3" 
+                                                    style="padding-bottom: 0px; padding-top: 0px;"
+                                                >
+                                                    <a 
+                                                        href="{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'fonction', 
+                                                                    'ordre': 'ASC'
+                                                                }
+                                                            ) 
+                                                        }}"
+                                                        style="display: block; width: 5px;"
+                                                        title="Trier par ordre croissant" 
+                                                    >
+                                                        <img 
+                                                            src="{{ asset('images/icons/fleche_croissant.png') }}" alt="Trier par ordre croissant">
+                                                    </a>
+                                                    <a 
+                                                        href="{{ 
+                                                            path(
+                                                                'er_cherche', 
+                                                                {
+                                                                    'page': 1, 
+                                                                    'trie': 'fonction', 
+                                                                    'ordre': 'DESC'
+                                                                }
+                                                            ) 
+                                                        }}"
+                                                        title="Trier par ordre décroissant" 
+                                                    >
+                                                        <img 
+                                                            src="{{ asset('images/icons/fleche_decroissant.png') }}" alt="Trier par ordre décroissant"
+                                                        >
+                                                    </a>
+                                                    <span 
+                                                        style="color: black; position: relative; top: -8px;left: 8px;"
+                                                    >
+                                                        <b>Fonction</b>
+                                                    </span>
+                                                </td>
                                                 <td class="col-md-3"><span style="color: black;"><b>Action</b></span></td>
                                             </tr>
                                             <script type="text/javascript">
@@ -122,7 +251,18 @@
                                                     <td class="col-md-3">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <button class="btn btn-sm btn-primary"><i class="fa fa-edit "></i> Modifier</button>
+                                                                <a 
+                                                                    href="
+                                                                    {{ 
+                                                                        path(
+                                                                            'er_modifier',
+                                                                            { 'id': Membre.id }
+                                                                        ) 
+                                                                    }}" 
+                                                                    class="btn btn-sm btn-primary">
+                                                                    <i class="fa fa-pencil"></i> 
+                                                                    Modifier
+                                                                </a>  
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <button 

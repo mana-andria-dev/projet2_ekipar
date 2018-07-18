@@ -93,7 +93,8 @@ class MembreController extends Controller {
 	    );
     }
 
-    public function chercherAction($page) {
+    public function chercherAction($page, $trie, $ordre) {
+    	$critere = [$trie=>$ordre];
     	//composer require knplabs/knp-paginator-bundle
     	//https://github.com/liuggio/ExcelBundle
 		$em = $this->getDoctrine()->getManager();
@@ -106,7 +107,7 @@ class MembreController extends Controller {
 
 		$TotalMembres = count($TotalMembres);
 
-		$listeMembres = $em->getRepository('ERBundle:Membre')->findBy(array(), array('id' => 'DESC'));
+		$listeMembres = $em->getRepository('ERBundle:Membre')->findBy(array(), $critere);
 		
 		$Membres  = $this->get('knp_paginator')->paginate(
 			$listeMembres,
@@ -125,6 +126,45 @@ class MembreController extends Controller {
 	      'TotalMembres' 	=> $TotalMembres
 	    ));
     }
+
+	public function modifierAction($id, Request $request) {
+		$em = $this->getDoctrine()->getManager();
+
+		$membre = $em->getRepository('ERBundle:Membre')->find($id);
+		$message = ['status'=>'', 'text'=>''];
+
+		if (null === $membre) {
+		  throw new NotFoundHttpException("Membre introubale.");
+		}
+
+	    $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $membre);
+	    $message = ['status'=>'wxx', 'text'=>'fff'];
+
+	    // On ajoute les champs de l'entité que l'on veut à notre formulaire
+	    $formBuilder
+	      ->add('nom',      	TextType::class)
+	      ->add('prenom',   	TextType::class)
+	      ->add('fonction',   	TextType::class)
+	      ->add('cin',   		TextType::class)
+	      ->add('telephone',   	TextType::class)
+	    ;
+	    // Pour l'instant, pas de candidatures, catégories, etc., on les gérera plus tard
+
+	    // À partir du formBuilder, on génère le formulaire
+	    $form = $formBuilder->getForm();
+
+		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+		  	$em->flush();
+		  	$message = ['status'=>'succes', 'text'=>'Un membre a été modifié avec succès'];
+		  //return $this->redirectToRoute('oc_platform_view', array('id' => $advert->getId()));
+		}
+
+		return $this->render('ERBundle:Membre:edit.html.twig', array(
+		  'membre' => $membre,
+		  'form'   => $form->createView(),
+		  'message'=> $message
+		));
+	}    
 
     public function adminAction() {
 	    return $this->render('ERBundle:Membre:admin.html.twig');    	
